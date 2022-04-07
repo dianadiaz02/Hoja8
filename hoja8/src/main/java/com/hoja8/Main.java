@@ -2,9 +2,12 @@ package com.hoja8;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.lang.reflect.Array;
 import java.util.Iterator;
 import java.util.PriorityQueue;
+import java.util.Scanner;
 
 /**
  * Es el main del programa. Genera la versi�n con VectorHeap y la que utiliza
@@ -18,36 +21,32 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		
-		File f;
-		FileReader fr;
-		BufferedReader br;
+		
 		Paciente paciente;
 		PriorityQueue<Paciente> pacientequeue = new PriorityQueue<Paciente>();
 		VectorHeap<Paciente> p = new VectorHeap<>();
 		try {
-			f = new File("/pacientes.txt");
-			fr = new FileReader(f);
-			br = new BufferedReader(fr);
-			String linea;
-			while ((linea = br.readLine()) != null) {
+			File f = new File("/Users/dianadiaz/Documents/GitHub/Hoja8/hoja8/src/main/java/com/hoja8/pacientes.txt");
+			Scanner pr = new Scanner(f);
+	
+			
+			while (pr.hasNextLine()) {
+				String linea = pr.nextLine();
+				String[] spliLinea = linea.split(",");
 				String nombre = "";
 				String enfermedad = "";
 				String tipo = "";
-				String temporal = "";
-				int pos = linea.indexOf(",");
-				nombre = linea.substring(0, pos);
-				temporal = linea.substring(pos + 1, linea.length());
-				pos = temporal.indexOf(",");
-				enfermedad = temporal.substring(0, pos);
-				tipo = temporal.substring(pos + 1, temporal.length());
+				nombre = spliLinea[0];
+				enfermedad = spliLinea[1];
+				tipo = spliLinea[2];
 				paciente = new Paciente(nombre, enfermedad, tipo);
 				p.add(paciente);
 				pacientequeue.offer(paciente);
 			}
-			br.close();
-			fr.close();
-		} catch (Exception e) {
-			System.err.println("Se produjo un error");
+			pr.close();
+		} catch (FileNotFoundException e) {
+			//System.err.println("Se produjo un error");
+			e.printStackTrace();
 		}
 		System.out.println("===Registro de pacientes con VectorHeap===");
 		/**
