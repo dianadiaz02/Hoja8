@@ -7,12 +7,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Unit test for simple App.
  */
-class AppTest {
-    /**
-     * Rigorous Test.
-     */
-    @Test
-    void testApp() {
-        assertEquals(1, 1);
-    }
+class LeftTest {
+
+	@Test
+	void testleft() {
+		VectorHeap test = new VectorHeap();
+		int result = test.left(5);
+		assertEquals(11, result);
+
+	}
+	
 }
