@@ -1,7 +1,16 @@
 package com.hoja8;
-
+/**
+ * Universidad del Valle de Guatemala
+ * Algoritmos y estructuras de datos
+ * @author Diana Díaz 21066
+ * @author Mario Puente 21290
+ * @version 1.0
+ * Fecha 7/04/2022
+ */
+//imports
 import java.util.Vector;
 
+//la clase de vectorHeap que implementa el priorityQueue, con la comparable
 public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E> {
 
 	protected Vector<E> data; // the data, kept in heap order

@@ -1,5 +1,14 @@
 package com.hoja8;
+/**
+ * Universidad del Valle de Guatemala
+ * Algoritmos y estructuras de datos
+ * @author Diana Díaz 21066
+ * @author Mario Puente 21290
+ * @version 1.0
+ * Fecha 7/04/2022
+ */
 
+ //la interface de priorityQueue que extiene una comparable
 public interface PriorityQueue<E extends Comparable<E>> {
     public E getFirst();
 	// pre: !isEmpty()

@@ -1,7 +1,17 @@
 package com.hoja8;
+/**
+ * Universidad del Valle de Guatemala
+ * Algoritmos y estructuras de datos
+ * @author Diana Díaz 21066
+ * @author Mario Puente 21290
+ * @version 1.0
+ * Fecha 7/04/2022
+ */
 
+ //esta es la clase paciente que implementa un comparable
 public class Paciente implements Comparable<Paciente> {
 
+	/* */
 	private String nombre;
 	private String enfermedad;
 	private String tipo;
@@ -63,7 +73,7 @@ public class Paciente implements Comparable<Paciente> {
 	}
 
 	/**
-	 * M�todo compareTo para comparar dos elementos de la misma clase
+	 * Método compareTo para comparar dos elementos de la misma clase
 	 * 
 	 * @param p
 	 * @return entero que indica, si es mayor, menor o igual
@@ -79,7 +89,7 @@ public class Paciente implements Comparable<Paciente> {
 	}
 
 	/**
-	 * M�todo toString
+	 * Metodo toString
 	 * 
 	 * @return texto
 	 */
